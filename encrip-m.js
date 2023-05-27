@@ -41,12 +41,13 @@ function desencriptar(stringDesencriptado){
     return stringDesencriptado
 }
 
-// Evento y funcion copido, extraido de mi version.
+// Evento y funcion del boton copiar, extraido de mi version.
+const copiarBtn = document.querySelector(".btn-copiar");
 
-btn-copiar.addEventListener("click", copiarTexto);
+copiarBtn.addEventListener("click", copiarTexto);
 
 function copiarTexto() {
-    const textoAcopiar = textoEncriptado.innerText;
+    const textoAcopiar = mensaje.value;
     navigator.clipboard.writeText(textoAcopiar)
       .then(() => alert("Texto copiado, veamos si funciona al reves: " + textoAcopiar))
       .catch((error) => console.error("Error al copiar el texto: ", error));
